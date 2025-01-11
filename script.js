@@ -43,3 +43,34 @@ window.addEventListener('scroll', updateGalleryPosition);
 window.addEventListener('resize', updateGalleryPosition);
 
 updateGalleryPosition();
+
+const videoWrapper = document.querySelector('.video-wrapper');
+const video = document.querySelector('video');
+
+video.pause();
+
+video.addEventListener('loadedmetadata', () => {
+    const handleVideoScroll = () => {
+        const rect = videoWrapper.getBoundingClientRect();
+        const sectionHeight = rect.height;
+        const viewportHeight = window.innerHeight;
+
+        let scrollprogress;
+
+        if (rect.top <= 0 && rect.bottom >= viewportHeight) {
+            scrollProgress = -rect.top / (sectionHeight - viewportHeight);
+        } else if (rect.top > 0) {
+            scrollProgress = 0;
+        } else {
+            scrollProgress = 1;
+        }
+
+        scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+        video.currentTime = video.duration * scrollProgress;
+    };
+
+    window.addEventListener('scroll', handleVideoScroll);
+    handleVideoScroll();
+});
+
+video.preload = 'auto';
