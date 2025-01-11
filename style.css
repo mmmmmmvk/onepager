@@ -71,13 +71,12 @@ body {
 }
 
 .scroll-animate {
-    min-height: 30vh;
+    min-height: 40vh;
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     background-color: #009EDE;
 }
 
@@ -92,6 +91,14 @@ body {
     transform: translateY(0);
 }
 
+.animate-element h2 {
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.animate-element p {
+    font-size: 2rem;
+}
 
 
 section {
@@ -99,16 +106,17 @@ section {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
 }
 
 p {
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 .container {
-    max-width: 400px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -119,6 +127,7 @@ button {
     border-radius: 5px;
     background-color: #009EDE;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .button-container {
