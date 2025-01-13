@@ -110,7 +110,7 @@ body {
 }
 
 .sticky-container {
-    height: 400vh;
+    height: 200vh;
     background-color: hsla(270, 0%, 10%, 1);
     position: relative;
 }
