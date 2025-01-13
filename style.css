@@ -9,11 +9,11 @@
     src: url(fonts/Geist-Regular.woff2);
 }
 
+
 body {
     font-family: Geist Regular, sans-serif;
     line-height: 1.6;
     color: #ffffff;
-    background-color: black;
     overflow-x: hidden;
 }
 
@@ -25,7 +25,8 @@ body {
     align-items: center;
     text-align: center;
     padding: 2rem;
-    background: #000000;
+    background-color: hsla(270, 0%, 10%, 1);
+    overflow-x: hidden;
     color: #ffffff;
 }
 
@@ -53,7 +54,14 @@ body {
 
 .parallax {
     height: 100vh;
-    background-image: url(img/grid.png);
+    background-color: hsla(270, 0%, 10%, 1);
+    background-image: 
+    radial-gradient(circle at 20% 60%,hsla(315,0%, 100%, 1)0%,  transparent 55%),
+    radial-gradient(circle at 40% 80%,hsla(315, 0%, 100%, 1)0%, transparent 55%), 
+    radial-gradient(circle at 10% 60%,hsla(315, 100%, 60%, 0.3)0%, transparent 45%),
+    radial-gradient(circle at 50% 90%,hsla(180, 100%, 60%, 0.3)0%, transparent 45%),
+    radial-gradient(circle at 20% 80%,hsla(240, 100%, 60%, 1)0%, transparent 70%);
+    background-blend-mode: overlay, overlay, normal, normal, normal;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,7 +72,7 @@ body {
 }
 
 .parallax-content {
-    background-color: #000000;
+    background-color: hsla(270, 0%, 10%, 1);
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
@@ -78,7 +86,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
+    background-color: hsla(270, 0%, 10%, 1);
 }
 
 .animate-element {
@@ -103,7 +111,7 @@ body {
 
 .sticky-container {
     height: 400vh;
-    background-color: #000000;
+    background-color: hsla(270, 0%, 10%, 1);
     position: relative;
 }
 
@@ -111,7 +119,6 @@ body {
     height: 100vh;
     position: sticky;
     top: 0;
-    background: #000000;
     color: white;
     overflow: hidden;
 }
@@ -146,17 +153,15 @@ body {
 
 .video-wrapper {
     height: 300vh;
+    background-color: hsla(270, 0%, 10%, 1);
     position: relative;
-    background: #000000;
 }
 
 .video-playback {
     height: 100vh;
-    background: #000000;
     position: sticky;
     top: 0;
     overflow: hidden;
-    background: #000000;
 }
 
 .video-container {
@@ -218,6 +223,15 @@ button {
     align-items: center;
     gap: 1rem;
     text-align: center;
+}
+
+.progress-circle {
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    text-align: center;
+    background-color: hsla(270, 0%, 10%, 1);
 }
 
 
