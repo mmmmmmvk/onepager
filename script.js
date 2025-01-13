@@ -74,3 +74,26 @@ video.addEventListener('loadedmetadata', () => {
 });
 
 video.preload = 'auto';
+
+const parallaxSection = document.querySelector('.parallax');
+const layers = document.querySelectorAll('.parallax-layer');
+
+window.addEventListener('scroll',() => {
+    const scrolled = window.scrollY;
+    const sectionTop = parallaxSection.offsetTop;
+    const sectionBottom = sectionTop + parallaxSection.offsetHeight;
+
+    if (scrolled + window.innerHeight > sectionTop && scrolled < sectionBottom) {
+
+        const relScroll = scrolled - sectionTop;
+
+        layers.forEach((layer, index ) => {
+            
+        const speed = (4 - index) * 0.2;
+        const yOffset = relScroll * speed;
+
+        layer.style.transform = `translateY(${yOffset}px)`;
+
+    });
+    }
+})
