@@ -112,7 +112,10 @@
                 <p>Watch how this small animation plays frame by frame when you scroll.</p>
             </div>
             <div class="video-container">
-                <video src="img/3d-vp9-chrome.webm" autoplay loop muted></video>
+                <video loop autoplay muted playsinline>
+                    <source src="img/3d-hevc-safari.mp4" type='video/mp4; codecs: "hvc1"'>
+                    <source src="img/3d-vp9-chrome.webm" type="video/webm">
+                </video>
          </div>
         </section>
     </div>
