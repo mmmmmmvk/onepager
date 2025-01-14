@@ -9,6 +9,44 @@
     src: url(fonts/Geist-Regular.woff2);
 }
 
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #000000;
+    z-index: 1000;
+    transition: opacity 1s visibility 1s;
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 10px solid #dddddd;
+    border-top-color: #1600de;
+    box-shadow: 0 0 30px rgb(16, 0, 234);
+    border-radius: 50%;
+    animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn)
+    }
+    to {
+        transform: rotate(1turn)
+    }
+
+}
 
 body {
     font-family: Geist Regular, sans-serif;
@@ -28,6 +66,7 @@ body {
     background-size: cover;
     scroll-behavior: smooth;
 }
+
 
 .intro {
     height: 100vh;
@@ -151,11 +190,11 @@ body {
 
 .animate-element h2 {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 .animate-element p {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .sticky-container {
@@ -243,19 +282,26 @@ section {
 }
 
 h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
 p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    max-width: 500px;
+    text-align: center;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 button {
@@ -279,7 +325,9 @@ button {
     min-height: 100vh;
     position: sticky;
     top: 0;
-    align-items: center;
+    display: flex;
+    align-items: top;
+    justify-content: center;
     text-align: center;
 }
 
