@@ -1,3 +1,5 @@
+//Scroll-triggered Text animations
+
 const observerSettings = {
     root: null,
     rootMargin: '0px',
@@ -17,6 +19,8 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.animate-element').forEach((element) => {
     observer.observe(element);
 });
+
+//Sticky + Horizontal scrolling
 
 const stickyContainer = document.querySelector('.sticky-container');
 const gallery = document.querySelector('.gallery');
@@ -43,6 +47,8 @@ window.addEventListener('scroll', updateGalleryPosition);
 window.addEventListener('resize', updateGalleryPosition);
 
 updateGalleryPosition();
+
+//Frame by Frame scrolling
 
 const videoWrapper = document.querySelector('.video-wrapper');
 const video = document.querySelector('video');
@@ -76,6 +82,8 @@ video.addEventListener('loadedmetadata', () => {
 });
 
 video.preload = 'auto';
+
+//Parallax animation
 
 const parallaxSection = document.querySelector('.parallax');
 const layers = document.querySelectorAll('.parallax-layer');
@@ -115,6 +123,8 @@ window.addEventListener("load", () => {
     });
 });
 
+//Video format debugging
+
 function isBrowserCompatibleWithWebM() {
     const video = document.createElement('video');
     return video.canPlayType('video/webm; codecs="vp9"') !== "";
@@ -126,10 +136,12 @@ if (isBrowserCompatibleWithWebM()) {
     const webmSrc = document.createElement('source');
     webmSrc.src = 'https://mmmmmmvk.s3.eu-north-1.amazonaws.com/3d-vp9-chrome.webm';
     webmSrc.type = 'video/webm;';
+    webmSrc.alt = 'Video animation';
     videoElement.appendChild(webmSrc);
 } else {
     const mp4Src = document.createElement('source');
     mp4Src.src = 'https://mmmmmmvk.s3.eu-north-1.amazonaws.com/3d-hevc-safari.mp4';
     mp4Src.type = 'video/mp4;';
+    mp4Src.alt = 'Video animation';
     videoElement.appendChild(mp4Src); 
 }

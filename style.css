@@ -1,4 +1,4 @@
-* {
+* {             /* Master class */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +9,9 @@
     src: url(fonts/Geist-Regular.woff2);
 }
 
-.loader {
+/* Loading Screen */
+
+.loader { 
     position: fixed;
     top: 0;
     left: 0;
@@ -38,7 +40,7 @@
     animation: loading 1s ease infinite;
 }
 
-@keyframes loading {
+@keyframes loading {  /* Spinning Circle Animation */
     from {
         transform: rotate(0turn)
     }
@@ -67,6 +69,8 @@ body {
     scroll-behavior: smooth;
 }
 
+
+/* Intro Section */
 
 .intro {
     height: 100vh;
@@ -101,6 +105,8 @@ body {
         transform: translateY(0);
     }
 }
+
+/* Parallax section */
 
 .parallax {
     height: 100vh;
@@ -164,6 +170,8 @@ body {
     z-index: 5;
 }
 
+/* Scroll-triggered Animation Section */
+
 .scroll-animate {
     min-height: 40vh;
     padding: 4rem 2rem;
@@ -196,6 +204,8 @@ body {
 .animate-element p {
     font-size: 1rem;
 }
+
+/* Sticky + Horizontal Scroll Section */
 
 .sticky-container {
     height: 200vh;
@@ -238,6 +248,8 @@ body {
     object-fit: contain;
 }
 
+/* Frame by Frame Video Section */
+
 .video-wrapper {
     height: 300vh;
     position: relative;
@@ -276,6 +288,8 @@ body {
     text-align: center;
     color: white;
 }
+
+/* General styling */
 
 section {
     padding: 2rem;
@@ -321,15 +335,6 @@ button {
     text-align: center;
 }
 
-.progress-circle {
-    min-height: 100vh;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: top;
-    justify-content: center;
-    text-align: center;
-}
 
 
 
