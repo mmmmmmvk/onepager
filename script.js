@@ -50,38 +50,30 @@ updateGalleryPosition();
 
 //Frame by Frame scrolling
 
+const scrollImg = document.getElementById('framebyframe-scroll');
+const totalFrames = 299;
+
 const videoWrapper = document.querySelector('.video-wrapper');
-const video = document.querySelector('video');
 
-video.pause();
+window.addEventListener('scroll', () => {
+    const wrapperTop = videoWrapper.getBoundingClientRect().top;
+    const wrapperHeight = videoWrapper.offsetHeight;
+    const viewportHeight = window.innerHeight;
 
-video.addEventListener('loadedmetadata', () => {
-
-    const handleVideoScroll = () => {
-        const rect = videoWrapper.getBoundingClientRect();
-        const sectionHeight = rect.height;
-        const viewportHeight = window.innerHeight;
-
-        let scrollprogress;
-
-        if (rect.top <= 0 && rect.bottom >= viewportHeight) {
-            scrollProgress = -rect.top / (sectionHeight - viewportHeight);
-        } else if (rect.top > 0) {
-            scrollProgress = 0;
-        } else {
-            scrollProgress = 1;
-        }
-
-
-        scrollProgress = Math.max(0, Math.min(1, scrollProgress));
-        video.currentTime = video.duration * scrollProgress;
-    };
-
-    window.addEventListener('scroll', handleVideoScroll);
-    handleVideoScroll();
+    if (wrapperTop < viewportHeight && wrapperTop + wrapperHeight > 0) {
+        const maxScrollInSection = wrapperHeight - viewportHeight;
+        const scrollPosInSection = Math.min(Math.max(-wrapperTop, 0), maxScrollInSection);
+        const scrollPct = Math.min(Math.max(scrollPosInSection / maxScrollInSection, 0), 1);
+        const currentFrame = Math.floor(scrollPct * totalFrames);
+        scrollImg.src = `img/onepager_${String(currentFrame).padStart(5, '0')}.png`;
+    } else if (wrapperTop + wrapperHeight <= 0) {
+        scrollImg.src = `img/onepager_${String(totalFrames - 1).padStart(5, '0')}.png`;
+    } else if (wrapperTop >= viewportHeight) {
+        scrollImg.src = `img/onepager_00000.png`;
+    }
 });
 
-video.preload = 'auto';
+
 
 //Parallax animation
 
