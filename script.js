@@ -50,10 +50,20 @@ updateGalleryPosition();
 
 //Frame by Frame scrolling
 
+
 const scrollImg = document.getElementById('framebyframe-scroll');
 const totalFrames = 299;
 
 const videoWrapper = document.querySelector('.video-wrapper');
+
+function preloadFrames() {
+    for (let i = 0; i <= totalFrames; i++) {
+        const img = new Image();
+        img.src = `img/onepager_${String(i).padStart(5, '0')}.png`;
+    }
+}
+
+preloadFrames();
 
 window.addEventListener('scroll', () => {
     const wrapperTop = videoWrapper.getBoundingClientRect().top;
