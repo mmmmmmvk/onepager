@@ -289,6 +289,20 @@ body {
     color: white;
 }
 
+.end-section {
+    min-height: 50vh;
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+
+
 /* General styling */
 
 section {
@@ -318,14 +332,6 @@ p {
 
 }
 
-button {
-    padding: 0.5rem 1rem;
-    border: solid 2px #ffffff;
-    border-radius: 5px;
-    background-color: #000000;
-    color: #ffffff;
-    cursor: pointer;
-}
 
 .button-container {
     display: flex;

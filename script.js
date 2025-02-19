@@ -59,7 +59,7 @@ const videoWrapper = document.querySelector('.video-wrapper');
 function preloadFrames() {
     for (let i = 0; i <= totalFrames; i++) {
         const img = new Image();
-        img.src = `img/onepager_${String(i).padStart(5, '0')}.png`;
+        img.src = `img/onepager_${String(i).padStart(5, '0')}.webp`;
     }
 }
 
@@ -75,11 +75,11 @@ window.addEventListener('scroll', () => {
         const scrollPosInSection = Math.min(Math.max(-wrapperTop, 0), maxScrollInSection);
         const scrollPct = Math.min(Math.max(scrollPosInSection / maxScrollInSection, 0), 1);
         const currentFrame = Math.floor(scrollPct * totalFrames);
-        scrollImg.src = `img/onepager_${String(currentFrame).padStart(5, '0')}.png`;
+        scrollImg.src = `img/onepager_${String(currentFrame).padStart(5, '0')}.webp`;
     } else if (wrapperTop + wrapperHeight <= 0) {
-        scrollImg.src = `img/onepager_${String(totalFrames - 1).padStart(5, '0')}.png`;
+        scrollImg.src = `img/onepager_${String(totalFrames - 1).padStart(5, '0')}.webp`;
     } else if (wrapperTop >= viewportHeight) {
-        scrollImg.src = `img/onepager_00000.png`;
+        scrollImg.src = `img/onepager_00000.webp`;
     }
 });
 
@@ -125,6 +125,10 @@ window.addEventListener("load", () => {
     });
 });
 
+document.getElementById('scrollToTopBtn').addEventListener('click', () => {
+    alert('Button clicked!');
+});
+
 //Video format debugging
 
 function isBrowserCompatibleWithWebM() {
@@ -139,7 +143,7 @@ if (isBrowserCompatibleWithWebM()) {
     webmSrc.src = 'https://mmmmmmvk.s3.eu-north-1.amazonaws.com/3d-vp9-chrome.webm';
     webmSrc.type = 'video/webm;';
     webmSrc.alt = 'Video animation';
-    videoElement.appendChild(webmSrc);
+    videoElement?.appendChild(webmSrc);
 } else {
     const mp4Src = document.createElement('source');
     mp4Src.src = 'https://mmmmmmvk.s3.eu-north-1.amazonaws.com/3d-hevc-safari.mp4';
