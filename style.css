@@ -202,7 +202,10 @@ body {
 }
 
 .animate-element p {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    max-width: 500px;
+    text-align: center; 
 }
 
 /* Sticky + Horizontal Scroll Section */
@@ -301,6 +304,17 @@ body {
     left: 0;
 }
 
+footer {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:hsla(246, 100%, 60%, 0.3);
+    text-align: center;
+    
+}
+
+
 
 
 /* General styling */
@@ -312,6 +326,7 @@ section {
 h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 p {
@@ -332,6 +347,15 @@ p {
 
 }
 
+button {
+    padding: 1rem 2rem;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 1000px;
+    font-family: Geist Regular, sans-serif;
+    cursor: pointer;
+}
 
 .button-container {
     display: flex;
@@ -341,6 +365,88 @@ p {
     text-align: center;
 }
 
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+
+    .intro {
+        height: 75vh;
+    }
+
+    .parallax {
+        height: 75vh;
+    }
+
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .intro h1 {
+        font-size: 3.5rem;
+    }
+
+    .intro p {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    p {
+        font-size: 1.375rem;
+    }
+
+    button {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .intro h1 {
+        font-size: 4rem;
+    }
+
+    .intro p {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 1rem 2rem;
+        font-size: 1.25rem;
+    }
+}
 
 
 

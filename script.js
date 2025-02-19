@@ -125,6 +125,9 @@ window.addEventListener("load", () => {
     });
 });
 
-document.getElementById('scrollToTopBtn').addEventListener('click', () => {
-    alert('Button clicked!');
-})
+document.getElementById('restartBtn').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
