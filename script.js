@@ -127,27 +127,4 @@ window.addEventListener("load", () => {
 
 document.getElementById('scrollToTopBtn').addEventListener('click', () => {
     alert('Button clicked!');
-});
-
-//Video format debugging
-
-function isBrowserCompatibleWithWebM() {
-    const video = document.createElement('video');
-    return video.canPlayType('video/webm; codecs="vp9"') !== "";
-}
-
-const videoElement = document.getElementById('video-content');
-
-if (isBrowserCompatibleWithWebM()) {
-    const webmSrc = document.createElement('source');
-    webmSrc.src = 'https://mmmmmmvk.s3.eu-north-1.amazonaws.com/3d-vp9-chrome.webm';
-    webmSrc.type = 'video/webm;';
-    webmSrc.alt = 'Video animation';
-    videoElement?.appendChild(webmSrc);
-} else {
-    const mp4Src = document.createElement('source');
-    mp4Src.src = 'https://mmmmmmvk.s3.eu-north-1.amazonaws.com/3d-hevc-safari.mp4';
-    mp4Src.type = 'video/mp4;';
-    mp4Src.alt = 'Video animation';
-    videoElement.appendChild(mp4Src); 
-}
+})
