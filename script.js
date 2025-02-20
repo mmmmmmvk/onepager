@@ -110,11 +110,12 @@ window.addEventListener('scroll',() => {
     }
 })
 
+
 window.addEventListener("load", () => {
 
     const loader = document.querySelector(".loader")
 
-    window.scrollTo(0, 0); // Scroll to top when Loading the page has finished
+    window.scrollTo(0, 0); //Scroll to top when Loading the page has finished
     console.log("Page has loaded");
 
     loader.classList.add("loader--hidden");
@@ -124,6 +125,8 @@ window.addEventListener("load", () => {
 
     });
 });
+
+//Restart the experience button
 
 document.getElementById('restartBtn').addEventListener('click', () => {
     window.scrollTo({
