@@ -317,6 +317,7 @@ footer {
 
 
 
+
 /* General styling */
 
 section {
@@ -400,6 +401,46 @@ a {
         padding: 0.75rem 1.5rem;
         font-size: 0.875rem;
     }
+
+    footer {
+        height: 10vh;
+    }
+
+    footer span {
+        font-size: 0.75rem;
+    }
+
+    .animate-element p {
+        font-size: 1rem;
+    }
+
+    .parallax-layer img {
+        min-width: 150px;
+    }
+
+    .layer-1 {
+        top: 15%;
+        height: 60%;
+    }
+
+    .layer-2 {
+        top: 75%;
+        left: 15%;
+        height: 50%;
+    }
+
+    .layer-3 {
+        top: 15%;
+        left: 35%;
+        height: 40%;
+        z-index: 1000;
+    }
+
+    .layer-4 {
+        top: 10%;
+        left: 70%;
+        height: 10%;
+    }    
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
